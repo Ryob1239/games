@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Gamer Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🎮 UG Pro</div>
+        <div class="busqueda">
+            <input type="text" id="buscador" placeholder="Buscar juego...">
+        </div>
+        <button id="btn-tema" class="btn-tema">🌙 Oscuro</button>
+    </nav>
+
+    <main id="juegos" class="contenedor">
+        <section class="galeria-juegos" id="galeria">
+            
+            <article class="tarjeta juego-item">
+                <img src="https://images.unsplash.com/photo-1589241062272-c0a1f436000c?auto=format&fit=crop&w=600&q=80" alt="Shooter táctico">
+                <div class="contenido-tarjeta">
+                    <h2 class="titulo-juego">Fortnite</h2>
+                    <p>Construcción, precisión y supervivencia. Domina el mapa antes de que la tormenta te alcance.</p>
+                </div>
+                <button class="btn-consejo" onclick="toggleConsejo('c1', this)">Ver Estrategia</button>
+                <div id="c1" class="consejo-oculto">
+                    <p>Asegura la altura en los círculos finales y gestiona tus materiales; la rotación temprana asegura la victoria.</p>
+                </div>
+            </article>
+
+            <article class="tarjeta juego-item">
+                <img src="https://images.unsplash.com/photo-1607519225722-1de276707314?auto=format&fit=crop&w=600&q=80" alt="Bloques 3D">
+                <div class="contenido-tarjeta">
+                    <h2 class="titulo-juego">Minecraft</h2>
+                    <p>Exploración y creatividad absoluta. Construye tu imperio bloque a bloque o desafía al dragón.</p>
+                </div>
+                <button class="btn-consejo" onclick="toggleConsejo('c2', this)">Ver Modding Tip</button>
+                <div id="c2" class="consejo-oculto">
+                    <p>Al desarrollar mods en Forge, mantén tus texturas y etiquetas JSON bien organizadas en los directorios de recursos para evitar errores de carga.</p>
+                </div>
+            </article>
+
+            <article class="tarjeta juego-item">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Fantasía Épica">
+                <div class="contenido-tarjeta">
+                    <h2 class="titulo-juego">The Witcher 3</h2>
+                    <p>Fantasía oscura, monstruos implacables y una narrativa profunda donde cada decisión importa.</p>
+                </div>
+                <button class="btn-consejo" onclick="toggleConsejo('c3', this)">Ver Lore Tip</button>
+                <div id="c3" class="consejo-oculto">
+                    <p>Lee el bestiario antes de cada combate importante; conocer el trasfondo te da la ventaja táctica perfecta.</p>
+                </div>
+            </article>
+
+            <article class="tarjeta juego-item">
+                <img src="https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&w=600&q=80" alt="Exploración Espacial">
+                <div class="contenido-tarjeta">
+                    <h2 class="titulo-juego">No Man's Sky</h2>
+                    <p>Un universo infinito generado proceduralmente. Descubre planetas, flora y fauna nunca antes vistos.</p>
+                </div>
+                <button class="btn-consejo" onclick="toggleConsejo('c4', this)">Ver Tip Astronómico</button>
+                <div id="c4" class="consejo-oculto">
+                    <p>Mejora tu motor de salto pronto para alcanzar sistemas estelares raros y recolectar recursos de alto valor.</p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
