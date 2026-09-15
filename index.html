@@ -3,72 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Universo Gamer Pro: descubre videojuegos, estrategias, consejos y recomendaciones."
+    >
+
     <title>Universo Gamer Pro</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">🎮 UG Pro</div>
-        <div class="busqueda">
-            <input type="text" id="buscador" placeholder="Buscar juego...">
-        </div>
-        <button id="btn-tema" class="btn-tema">🌙 Oscuro</button>
-    </nav>
 
-    <main id="juegos" class="contenedor">
-        <section class="galeria-juegos" id="galeria">
-            
-            <article class="tarjeta juego-item">
-                <img src="https://images.unsplash.com/photo-1589241062272-c0a1f436000c?auto=format&fit=crop&w=600&q=80" alt="Shooter táctico">
-                <div class="contenido-tarjeta">
-                    <h2 class="titulo-juego">Fortnite</h2>
-                    <p>Construcción, precisión y supervivencia. Domina el mapa antes de que la tormenta te alcance.</p>
-                </div>
-                <button class="btn-consejo" onclick="toggleConsejo('c1', this)">Ver Estrategia</button>
-                <div id="c1" class="consejo-oculto">
-                    <p>Asegura la altura en los círculos finales y gestiona tus materiales; la rotación temprana asegura la victoria.</p>
-                </div>
-            </article>
+    <!-- Navegación -->
+    <header class="header">
+        <nav class="navbar">
 
-            <article class="tarjeta juego-item">
-                <img src="https://images.unsplash.com/photo-1607519225722-1de276707314?auto=format&fit=crop&w=600&q=80" alt="Bloques 3D">
-                <div class="contenido-tarjeta">
-                    <h2 class="titulo-juego">Minecraft</h2>
-                    <p>Exploración y creatividad absoluta. Construye tu imperio bloque a bloque o desafía al dragón.</p>
-                </div>
-                <button class="btn-consejo" onclick="toggleConsejo('c2', this)">Ver Modding Tip</button>
-                <div id="c2" class="consejo-oculto">
-                    <p>Al desarrollar mods en Forge, mantén tus texturas y etiquetas JSON bien organizadas en los directorios de recursos para evitar errores de carga.</p>
-                </div>
-            </article>
+            <a href="#" class="logo" aria-label="Universo Gamer Pro">
+                <span class="logo-icono">🎮</span>
+                <span>UG <strong>Pro</strong></span>
+            </a>
 
-            <article class="tarjeta juego-item">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Fantasía Épica">
-                <div class="contenido-tarjeta">
-                    <h2 class="titulo-juego">The Witcher 3</h2>
-                    <p>Fantasía oscura, monstruos implacables y una narrativa profunda donde cada decisión importa.</p>
-                </div>
-                <button class="btn-consejo" onclick="toggleConsejo('c3', this)">Ver Lore Tip</button>
-                <div id="c3" class="consejo-oculto">
-                    <p>Lee el bestiario antes de cada combate importante; conocer el trasfondo te da la ventaja táctica perfecta.</p>
-                </div>
-            </article>
+            <div class="busqueda">
+                <span class="icono-busqueda">🔍</span>
 
-            <article class="tarjeta juego-item">
-                <img src="https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&w=600&q=80" alt="Exploración Espacial">
-                <div class="contenido-tarjeta">
-                    <h2 class="titulo-juego">No Man's Sky</h2>
-                    <p>Un universo infinito generado proceduralmente. Descubre planetas, flora y fauna nunca antes vistos.</p>
-                </div>
-                <button class="btn-consejo" onclick="toggleConsejo('c4', this)">Ver Tip Astronómico</button>
-                <div id="c4" class="consejo-oculto">
-                    <p>Mejora tu motor de salto pronto para alcanzar sistemas estelares raros y recolectar recursos de alto valor.</p>
-                </div>
-            </article>
+                <input
+                    type="search"
+                    id="buscador"
+                    placeholder="Buscar juego..."
+                    aria-label="Buscar videojuego"
+                    autocomplete="off"
+                >
+            </div>
+
+            <button
+                id="btn-tema"
+                class="btn-tema"
+                type="button"
+                aria-label="Cambiar tema"
+            >
+                🌙 Oscuro
+            </button>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Presentación -->
+        <section class="hero">
+
+            <div class="hero-contenido">
+
+                <span class="hero-etiqueta">
+                    🎮 TU PORTAL GAMER
+                </span>
+
+                <h1>
+                    Explora nuevos
+                    <span>universos</span>
+                </h1>
+
+                <p>
+                    Descubre videojuegos increíbles, consejos,
+                    estrategias y secretos para mejorar tu experiencia
+                    como jugador.
+                </p>
+
+                <a href="#juegos" class="btn-explorar">
+                    Explorar juegos ↓
+                </a>
+
+            </div>
+
+            <div class="hero-decoracion" aria-hidden="true">
+                <div class="control">🎮</div>
+            </div>
 
         </section>
+
+
+        <!-- Juegos -->
+        <section id="juegos" class="contenedor">
+
+            <div class="seccion-header">
+
+                <div>
+                    <span class="subtitulo-seccion">
+                        BIBLIOTECA
+                    </span>
+
+                    <h2>Juegos destacados</h2>
+
+                    <p>
+                        Encuentra tu próxima aventura.
+                    </p>
+                </div>
+
+                <div class="contador">
+                    <strong id="contador-juegos">4</strong>
+                    <span>juegos encontrados</span>
+                </div>
+
+            </div>
+
+
+            <!-- Categorías -->
+            <div class="filtros" aria-label="Filtros de videojuegos">
+
+                <button
+                    class="filtro activo"
+                    data-categoria="todos"
+                    type="button"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="filtro"
+                    data-categoria="accion"
+                    type="button"
+                >
+                    Acción
+                </button>
+
+                <button
+                    class="filtro"
+                    data-categoria="aventura"
+                    type="button"
+                >
+                    Aventura
+                </button>
+
+                <button
+                    class="filtro"
+                    data-categoria="supervivencia"
+                    type="button"
+                >
+                    Supervivencia
+                </button>
+
+                <button
+                    class="filtro"
+                    data-categoria="exploracion"
+                    type="button"
+                >
+                    Exploración
+                </button>
+
+            </div>
+
+
+            <!-- Galería -->
+            <section class="galeria-juegos" id="galeria">
+
+
+                <!-- Fortnite -->
+                <article
+                    class="tarjeta juego-item"
+                    data-categoria="accion supervivencia"
+                >
+
+                    <div class="imagen-contenedor">
+
+                        <img
+                            src="../img/fortnite.webp"
+                            alt="Videojuego de acción y combate"
+                            loading="lazy"
+                        >
+
+                        <span class="categoria">
+                            ACCIÓN
+                        </span>
+
+                        <span class="puntuacion">
+                            ⭐ 4.8
+                        </span>
+
+                    </div>
+
+
+                    <div class="contenido-tarjeta">
+
+                        <h3 class="titulo-juego">
+                            Fortnite
+                        </h3>
+
+                        <p>
+                            Construcción, precisión y supervivencia.
+                            Domina el mapa antes de que la tormenta
+                            te alcance.
+                        </p>
+
+                        <div class="tags">
+                            <span>Battle Royale</span>
+                            <span>Multijugador</span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn-consejo"
+                        data-consejo="c1"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>💡</span>
+                        Ver estrategia
+                    </button>
+
+
+                    <div
+                        id="c1"
+                        class="consejo-oculto"
+                    >
+                        <p>
+                            Asegura la altura durante los círculos
+                            finales y administra correctamente tus
+                            materiales. Rotar temprano puede darte
+                            una gran ventaja.
+                        </p>
+                    </div>
+
+                </article>
+
+
+
+                <!-- Minecraft -->
+                <article
+                    class="tarjeta juego-item"
+                    data-categoria="aventura supervivencia exploracion"
+                >
+
+                    <div class="imagen-contenedor">
+
+                        <img
+                            src="../img/minecraft.jpg"
+                            alt="Escenario relacionado con videojuegos"
+                            loading="lazy"
+                        >
+
+                        <span class="categoria">
+                            SUPERVIVENCIA
+                        </span>
+
+                        <span class="puntuacion">
+                            ⭐ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <div class="contenido-tarjeta">
+
+                        <h3 class="titulo-juego">
+                            Minecraft
+                        </h3>
+
+                        <p>
+                            Exploración y creatividad absoluta.
+                            Construye tu imperio bloque a bloque
+                            o desafía al dragón.
+                        </p>
+
+                        <div class="tags">
+                            <span>Sandbox</span>
+                            <span>Creatividad</span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn-consejo"
+                        data-consejo="c2"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>🧱</span>
+                        Ver consejo
+                    </button>
+
+
+                    <div
+                        id="c2"
+                        class="consejo-oculto"
+                    >
+                        <p>
+                            Al desarrollar mods en Forge mantén
+                            las texturas, modelos y archivos JSON
+                            correctamente organizados para evitar
+                            errores durante la carga.
+                        </p>
+                    </div>
+
+                </article>
+
+
+
+                <!-- The Witcher -->
+                <article
+                    class="tarjeta juego-item"
+                    data-categoria="aventura accion"
+                >
+
+                    <div class="imagen-contenedor">
+
+                        <img
+                            src="../img/witcher.jfif"
+                            alt="Evento y escenario de videojuegos"
+                            loading="lazy"
+                        >
+
+                        <span class="categoria">
+                            AVENTURA
+                        </span>
+
+                        <span class="puntuacion">
+                            ⭐ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <div class="contenido-tarjeta">
+
+                        <h3 class="titulo-juego">
+                            The Witcher 3
+                        </h3>
+
+                        <p>
+                            Fantasía oscura, monstruos implacables
+                            y una narrativa profunda donde cada
+                            decisión importa.
+                        </p>
+
+                        <div class="tags">
+                            <span>RPG</span>
+                            <span>Mundo abierto</span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn-consejo"
+                        data-consejo="c3"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>⚔️</span>
+                        Ver consejo
+                    </button>
+
+
+                    <div
+                        id="c3"
+                        class="consejo-oculto"
+                    >
+                        <p>
+                            Consulta el bestiario antes de combatir
+                            contra monstruos poderosos. Elegir aceites,
+                            bombas y señales correctamente facilita
+                            considerablemente cada enfrentamiento.
+                        </p>
+                    </div>
+
+                </article>
+
+
+
+                <!-- No Man's Sky -->
+                <article
+                    class="tarjeta juego-item"
+                    data-categoria="exploracion aventura"
+                >
+
+                    <div class="imagen-contenedor">
+
+                        <img
+                            src="../img/mans.jpg"
+                            alt="Escenario tecnológico y espacial"
+                            loading="lazy"
+                        >
+
+                        <span class="categoria">
+                            EXPLORACIÓN
+                        </span>
+
+                        <span class="puntuacion">
+                            ⭐ 4.7
+                        </span>
+
+                    </div>
+
+
+                    <div class="contenido-tarjeta">
+
+                        <h3 class="titulo-juego">
+                            No Man's Sky
+                        </h3>
+
+                        <p>
+                            Un universo enorme generado
+                            proceduralmente. Descubre planetas,
+                            especies y sistemas estelares.
+                        </p>
+
+                        <div class="tags">
+                            <span>Espacio</span>
+                            <span>Exploración</span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn-consejo"
+                        data-consejo="c4"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>🚀</span>
+                        Ver consejo
+                    </button>
+
+
+                    <div
+                        id="c4"
+                        class="consejo-oculto"
+                    >
+                        <p>
+                            Mejora el motor de salto de tu nave
+                            tan pronto como puedas para acceder
+                            a sistemas estelares raros y recursos
+                            de mayor valor.
+                        </p>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Sin resultados -->
+            <div id="sin-resultados" class="sin-resultados oculto">
+                <span>🎮</span>
+
+                <h3>No encontramos ese juego</h3>
+
+                <p>
+                    Prueba utilizando otro nombre o categoría.
+                </p>
+            </div>
+
+        </section>
+
     </main>
 
+
+    <footer>
+
+        <div class="footer-logo">
+            🎮 UG Pro
+        </div>
+
+        <p>
+            Universo Gamer Pro © 2026
+        </p>
+
+        <p class="footer-texto">
+            Hecho para jugadores, por jugadores.
+        </p>
+
+    </footer>
+
+
     <script src="js/script.js"></script>
+
 </body>
 </html>
